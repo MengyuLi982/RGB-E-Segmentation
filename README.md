@@ -3,19 +3,24 @@
 This repository contains the implementation of **multi-modal semantic segmentation** using RGB and event camera data. The project is based on my Master's thesis work:  
 > *Multi-Modal Fusion of Image Sequences for Dense Prediction with RGB and Event Cameras in Autonomous Driving*
 
-Here is the segmentation on DSEC dataset(real-world) and DELIVER dataset(synthetic).
+## Project Overview
 
+This research explores the integration of RGB and event camera data to enhance dense prediction tasks—especially semantic segmentation—in autonomous driving. RGB cameras deliver high-resolution visual information essential for scene understanding, while event cameras provide high temporal resolution and dynamic range, enabling motion detection and perception under extreme lighting conditions.  
+
+By fusing these complementary modalities, the system constructs a more complete and resilient representation of dynamic traffic environments. This work investigates multi-modal feature fusion strategies tailored for semantic segmentation.
+
+![Pipeline](pic/pipeline.png)
+Here presents the complete architecture of the methodology used in this thesis. Different RGB images and their corresponding X modality images serve as inputs. Each layer extracts features at various scales. These features are then processed through a cross linear attention mechanism. All the results from the cross attention are fed into the decoder, which consists of an MLP layer and a linear prediction layer. Finally, we calculate the cross-entropy loss between the predicted image and the ground truth to optimize our model. The gray rectangles represent different loss function tests within our model.
+
+
+Here is the segmentation on DSEC dataset(real-world) and DELIVER dataset(synthetic).
 ![RGB-E segmentation Results](pic/RGB-E.png)
 
 <!-- ![RGB-Thermal Segmentation Results](pic\RGB-Thermal.png) -->
 
 ![RGB-E/D Segementation Results(synthetic dataset)](pic/Synthetic_pic.png)
 
-## Project Overview
 
-This research explores the integration of RGB and event camera data to enhance dense prediction tasks—especially semantic segmentation—in autonomous driving. RGB cameras deliver high-resolution visual information essential for scene understanding, while event cameras provide high temporal resolution and dynamic range, enabling motion detection and perception under extreme lighting conditions.  
-
-By fusing these complementary modalities, the system constructs a more complete and resilient representation of dynamic traffic environments. This work investigates multi-modal feature fusion strategies tailored for semantic segmentation.
 
 ## Project Structure
 
